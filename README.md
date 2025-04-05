@@ -1,4 +1,4 @@
-# 🗨️ Chat App
+# REAL-TIME CHAT APPLICATION
 
 A clean and simple front-end chat interface built with **React**. Messages are displayed instantly in a chat window with smooth scrolling and a responsive layout.
 
