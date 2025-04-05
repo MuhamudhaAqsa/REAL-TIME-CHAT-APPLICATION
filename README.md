@@ -12,7 +12,7 @@ DURATION: 6 WEEKS
 
 MENTOR: NEELA SANTOSH
 
-##DESCRIPTION
+# DESCRIPTION
 
 An elegant and subtle front-end chat interface built with **React**. Messages are displayed instantly in a chat window with smooth scrolling and a responsive layout.
 
