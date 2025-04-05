@@ -18,7 +18,7 @@ An elegant and subtle front-end chat interface built with **React**. Messages ar
 
 This app demonstrates key React concepts like `useState`, `useEffect`, and `useRef`.
 
----
+
 
 ## OUTPUT
 
