@@ -67,7 +67,7 @@ Overall, this project demonstrates how a simple and focused real-time chat appli
 
 ## OUTPUT
 
-![Chat Screenshot](./chat.png)
+![Chat Screenshot](./chatapp.png)
 
 
 
