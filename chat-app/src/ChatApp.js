@@ -1,39 +1,35 @@
 import { useState, useEffect, useRef } from "react";
 
 export default function ChatApp() {
-  // State to store chat messages
+  // State to hold all chat messages
   const [messages, setMessages] = useState([]);
-
-  // State to handle input field value
+  // State to manage current input value
   const [input, setInput] = useState("");
-
   // Ref to scroll to the latest message
   const messagesEndRef = useRef(null);
 
-  // Function to send a new message
+  // Sends the message and updates the state
   const sendMessage = () => {
     if (input.trim() !== "") {
-      // Add new message to the messages array
       setMessages([...messages, { text: input, sender: "You" }]);
-      setInput(""); // Clear input field after sending
+      setInput(""); // Clear input after sending
     }
   };
 
-  // Trigger sendMessage() on pressing Enter
+  // Handles Enter key to send message
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       sendMessage();
     }
   };
 
-  // Scroll to bottom when new messages are added
+  // Scroll to bottom whenever a new message is added
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   return (
     <div style={styles.container}>
-      {/* Chat display area */}
       <div style={styles.chatBox}>
         {messages.map((msg, index) => (
           <div
@@ -47,11 +43,9 @@ export default function ChatApp() {
             {msg.text}
           </div>
         ))}
-        {/* Dummy div to scroll into view */}
+        {/* Scroll target div to keep the latest message in view */}
         <div ref={messagesEndRef} />
       </div>
-
-      {/* Input section for typing messages */}
       <div style={styles.inputContainer}>
         <input
           style={styles.input}
@@ -68,7 +62,7 @@ export default function ChatApp() {
   );
 }
 
-// Inline styles for layout and styling
+// Inline styles for the chat app
 const styles = {
   container: {
     display: "flex",
@@ -77,6 +71,11 @@ const styles = {
     height: "100vh",
     margin: "auto",
     padding: "16px",
+
+    // Added border to the overall chat container
+    border: "2px solid #ccc",
+    borderRadius: "8px",
+    backgroundColor: "#ffffff", // Makes the chat stand out
   },
   chatBox: {
     flex: 1,
